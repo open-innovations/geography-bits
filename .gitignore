@@ -1,0 +1,12 @@
+
+data/WD19CD/Wards_December_2019_Boundaries_EW_BGC.geojsonl.json
+data/WD19CD/parse.pl
+data/LAD19CD/Local_Authority_Districts_April_2019_Boundaries_UK_BGC.geojsonl.json
+data/LAD19CD/parse.pl
+data/LSOA01CD/Lower_Layer_Super_Output_Areas_December_2001_Boundaries_EW_BGC.geojson
+data/LSOA01CD/Lower_Layer_Super_Output_Areas_December_2001_Boundaries_EW_BGC.geojson.geojsonl.json
+data/LSOA01CD/lsoa.pl
+data/LSOA11CD/lsoa.pl
+data/LSOA11CD/Lower_Layer_Super_Output_Areas_December_2011_Boundaries_EW_BGC.geojson
+data/PCON17CD/parse.pl
+data/PCON17CD/Westminster_Parliamentary_Constituencies_December_2017_UK_BGC.geojsonl.json
