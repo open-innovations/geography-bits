@@ -12,7 +12,7 @@ if($file !~ /geojsonl/){
 }
 
 if(!-d $dir){
-	print "Directory $dir doesn't exist.\n";
+	print "Directory $dir doesn't exist. Please make it first.\n";
 	exit;
 }
 
