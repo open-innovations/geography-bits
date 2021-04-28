@@ -9,4 +9,4 @@ data/LSOA11CD/lsoa.pl
 data/LSOA11CD/Lower_Layer_Super_Output_Areas_December_2011_Boundaries_EW_BGC.geojson
 data/PCON17CD/parse.pl
 data/PCON17CD/Westminster_Parliamentary_Constituencies_December_2017_UK_BGC.geojsonl.json
-data/MSOA11CD/temp/
+data/*/temp/
