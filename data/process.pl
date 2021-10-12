@@ -10,11 +10,13 @@ $precision = 5;
 
 if(!-e $file || $file !~ /\.geojson$/){
 	print "Input file must be a geojson file.\n";
+	print "Usage: perl process.pl <GeoJSON file> <code>\n";
 	exit;
 }
 
 if(!$dir){
 	print "Please provide an ONS code as the second argument.";
+	print "Usage: perl process.pl <GeoJSON file> <code>\n";
 	exit;
 }
 
