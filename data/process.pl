@@ -84,6 +84,20 @@ while(<FILE>){
 			open(BIT,">",$dir."/".$id.".geojsonl");
 			print BIT $jsonl;
 			close(BIT);
+
+
+			$polyfile = $dir."/".$id.".poly";
+			if(!-e $polyfile){
+				open(BIT,">",$polyfile);
+				print BIT polyify_geojsonl($dir."/".$id.".geojsonl");
+				close(BIT);
+			}
+			
+			if(-s $polyfile > 250000){
+				print "The POLY file seems quite large for $id (".(-s $polyfile).") so you may want to optimise it.\n";
+			}
+
+
 		}
 		$out .= $jsonl;
 	}
@@ -94,4 +108,83 @@ open(JSON,">","$code/temp/$code.geojsonl.json");
 print JSON $out;
 close(JSON);
 
+
+
 print "Done.\n";
+
+
+
+
+##############################
+
+sub polyify_geojsonl {
+
+	my (@lines,$name,$coder,$str,$json,$file,@features,@feature,$nf,$n,$f,@polygons,$npoly,$p,@parts,$pt,$npt,$poly,@coords,$c,$polyfile);
+
+	$file = $_[0];
+
+	open(GEOJSON,$file);
+	@lines = <GEOJSON>;
+	close(GEOJSON);
+	$str = join("",@lines);
+
+	$coder = JSON::XS->new->utf8->canonical(1);
+
+	$json = $coder->decode($str);
+	@features = ($json);
+	$n = @features;
+
+	$name = $file;
+	$name =~ s/\.[^\.]*$//;
+	$name =~ s/[\/]/\_/g;
+
+	$poly = "$name\n";
+	if($n > 0){
+		for($f = 0; $f < $n; $f++){
+			# If this feature is a MultiPolygon
+			if($features[$f]{'geometry'}{'type'} eq "MultiPolygon"){
+				@feature = @{$features[$f]{'geometry'}{'coordinates'}};
+				$nf = @feature;
+				for($p = 0; $p < $nf; $p++){
+					@parts = @{$features[$f]{'geometry'}{'coordinates'}[$p]};
+					$npt = @parts;
+					for($pt = 0; $pt < $npt; $pt++){
+						if($pt > 0){
+							# Prefix for a hole
+							$poly .= "!";
+						}
+						$poly .= "polygon\_$f\_$p\_$pt\n";
+						@coords = @{$features[$f]{'geometry'}{'coordinates'}[$p][$pt]};
+						# Print all the coordinates for this part
+						for($c = 0; $c < @coords; $c++){
+							$poly .= "\t".$coords[$c][0]."\t".$coords[$c][1]."\n";
+						}
+						$poly .= "END\n";
+					}
+				}
+			}elsif($features[$f]{'geometry'}{'type'} eq "Polygon"){
+				@feature = @{$features[$f]{'geometry'}{'coordinates'}};
+				$nf = @feature;
+				for($p = 0; $p < $nf; $p++){
+					if($p > 0){
+						# Prefix for a hole
+						$poly .= "!";
+					}
+					$poly .= "polygon\_$f\_$p\n";
+					@coords = @{$features[$f]{'geometry'}{'coordinates'}[$p]};
+					$npt = @parts;
+					# Print all the coordinates for this part
+					for($c = 0; $c < @coords; $c++){
+						$poly .= "\t".$coords[$c][0]."\t".$coords[$c][1]."\n";
+					}
+					$poly .= "END\n";
+				}
+			}else{
+				print "Unknown type\n";
+			}
+		}
+	}
+	$poly .= "END\n";
+
+	return $poly;
+}
