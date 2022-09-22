@@ -32,7 +32,7 @@ $out = "";
 open(FILE,$file);
 while(<FILE>){
 	$line = $_;
-	if($line =~ /"type":\s+"Feature"/){
+	if($line =~ /"type":\s*"Feature"/){
 		$line =~ s/\,$//g;
 		$json = JSON::XS->new->decode($line);
 		$jsonl = "";

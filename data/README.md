@@ -10,6 +10,7 @@ The following sub-directories contain individual geojson blobs for:
 * __[Wards 2020](WD20CD/)__ e.g. [WD20CD/E05011403.geojsonl](WD20CD/E05011403.geojsonl) - source: [ONS](https://geoportal.statistics.gov.uk/datasets/wards-december-2020-uk-bgc-v2) (OGL)
 * __[Parliamentary constituencies 2017](PCON17CD/)__ e.g. [PCON17CD/E14000777.geojsonl](PCON17CD/E14000777.geojsonl) - source: [ONS](https://geoportal.statistics.gov.uk/datasets/wards-december-2019-boundaries-ew-bgc) (OGL)
 * __[MSOAs 2011](MSOA11CD/)__ e.g. [MSOA11CD/E02006875.geojsonl](MSOA11CD/E02006875.geojsonl) - source: [ONS](https://geoportal.statistics.gov.uk/datasets/middle-layer-super-output-areas-december-2011-boundaries-ew-bgc) (OGL)
+* __[MSOAs 2021](MSOA21CD/)__ e.g. [MSOA21CD/E02006875.geojsonl](MSOA21CD/E02006875.geojsonl) - source: [ONS](https://geoportal.statistics.gov.uk/datasets/ons::middle-layer-super-output-areas-december-2021-boundaries-generalised-clipped-ew-bgc) (OGL)
 * __[LSOAs 2011](LSOA11CD/)__ e.g. [LSOA11CD/E01033011.geojsonl](LSOA11CD/E01033011.geojsonl) - source: [ONS](https://geoportal.statistics.gov.uk/datasets/lower-layer-super-output-areas-december-2011-boundaries-ew-bgc) (OGL)
 * __[LSOAs 2001](LSOA01CD/)__ e.g. [LSOA01CD/E01011365.geojsonl](LSOA01CD/E01011365.geojsonl) - source: ONS (OGL)
 
