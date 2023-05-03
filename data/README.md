@@ -3,6 +3,7 @@
 The following sub-directories contain individual geojson blobs for:
 
 * __[Combined Authorities 2021](CAUTH21CD/)__ e.g. [CAUTH21CD/E47000003.geojsonl](CAUTH21CD/E47000003.geojsonl) - source: [ONS](https://geoportal.statistics.gov.uk/datasets/ons::combined-authorities-december-2021-en-bgc/explore)(OGL)
+* __[Local Authority Districts 2023](LAD23CD/)__ e.g. [LAD23CD/E08000035.geojsonl](LAD23CD/E08000035.geojsonl) - source: [ONS](https://geoportal.statistics.gov.uk/datasets/local-authority-districts-may-2021-uk-bgc/) (OGL) with [merging of authorities](https://en.wikipedia.org/wiki/2019%E2%80%932023_structural_changes_to_local_government_in_England#Changes_in_2023) and the [2023 codes](https://geoportal.statistics.gov.uk/datasets/ons::local-authority-districts-april-2023-names-and-codes-in-the-united-kingdom/about)
 * __[Local Authority Districts 2021](LAD21CD/)__ e.g. [LAD21CD/E08000035.geojsonl](LAD21CD/E08000035.geojsonl) - source: [ONS](https://geoportal.statistics.gov.uk/datasets/local-authority-districts-may-2021-uk-bgc/) (OGL)
 * __[Local Authority Districts 2020](LAD20CD/)__ e.g. [LAD20CD/E08000035.geojsonl](LAD20CD/E08000035.geojsonl) - source: [ONS](https://geoportal.statistics.gov.uk/datasets/local-authority-districts-december-2020-uk-bgc) (OGL)
 * __[Local Authority Districts 2019](LAD19CD/)__ e.g. [LAD19CD/E08000035.geojsonl](LAD19CD/E08000035.geojsonl) - source: [ONS](https://geoportal.statistics.gov.uk/datasets/local-authority-districts-december-2019-boundaries-uk-bgc) (OGL)
