@@ -7,6 +7,7 @@ The following sub-directories contain individual geojson blobs for:
 * __[Local Authority Districts 2021](LAD21CD/)__ e.g. [LAD21CD/E08000035.geojsonl](LAD21CD/E08000035.geojsonl) - source: [ONS](https://geoportal.statistics.gov.uk/datasets/local-authority-districts-may-2021-uk-bgc/) (OGL)
 * __[Local Authority Districts 2020](LAD20CD/)__ e.g. [LAD20CD/E08000035.geojsonl](LAD20CD/E08000035.geojsonl) - source: [ONS](https://geoportal.statistics.gov.uk/datasets/local-authority-districts-december-2020-uk-bgc) (OGL)
 * __[Local Authority Districts 2019](LAD19CD/)__ e.g. [LAD19CD/E08000035.geojsonl](LAD19CD/E08000035.geojsonl) - source: [ONS](https://geoportal.statistics.gov.uk/datasets/local-authority-districts-december-2019-boundaries-uk-bgc) (OGL)
+* __[Wards 2022](WD22CD/)__ e.g. [WD22CD/E05011403.geojsonl](WDCD/E05011403.geojsonl) - source: [ONS](https://geoportal.statistics.gov.uk/datasets/687211df93564622a1c00756e5f0cf78_0/about)
 * __[Wards 2020](WD20CD/)__ e.g. [WD20CD/E05011403.geojsonl](WD20CD/E05011403.geojsonl) - source: [ONS](https://geoportal.statistics.gov.uk/datasets/wards-december-2020-uk-bgc-v2) (OGL)
 * __[Wards 2019](WD19CD/)__ e.g. [WD19CD/E05011403.geojsonl](WD19CD/E05011403.geojsonl) - source: [ONS](https://geoportal.statistics.gov.uk/datasets/wards-december-2019-boundaries-ew-bgc) (OGL)
 * __[Parliamentary constituencies 2017](PCON17CD/)__ e.g. [PCON17CD/E14000777.geojsonl](PCON17CD/E14000777.geojsonl) - source: [ONS](https://geoportal.statistics.gov.uk/datasets/wards-december-2019-boundaries-ew-bgc) (OGL)
@@ -16,7 +17,7 @@ The following sub-directories contain individual geojson blobs for:
 * __[LSOAs 2011](LSOA11CD/)__ e.g. [LSOA11CD/E01033011.geojsonl](LSOA11CD/E01033011.geojsonl) - source: [ONS](https://geoportal.statistics.gov.uk/datasets/lower-layer-super-output-areas-december-2011-boundaries-ew-bgc) (OGL)
 * __[LSOAs 2001](LSOA01CD/)__ e.g. [LSOA01CD/E01011365.geojsonl](LSOA01CD/E01011365.geojsonl) - source: ONS (OGL)
 
-The data is downloaded from ONS GeoPortal as a `.geojson` file and stored in e.g. `WD20CD/temp/`. We then run:
+The data is downloaded from ONS GeoPortal as a `.geojson` file and stored in e.g. `WD20CD/temp/`. You will need to make sure there is one feature per line. Also, ONS have a tendency to output OS Easting/Northings rather than valid GeoJSON so you may want to first [fix the GeoJSON](https://open-innovations.github.io/ONS-GeoJSON-Fixer/). Once you have valid GeoJSON run:
 
 ```
 perl process.pl <FILE> <CODE>
